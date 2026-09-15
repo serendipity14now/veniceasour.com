@@ -705,3 +705,36 @@ html{scroll-padding-top:85px}
   .site-nav{gap:.85rem}
   .site-nav a{font-size:.86rem}
 }
+
+/* Round 17 — mobile hero order, mobile case-study carousel */
+
+/* Mobile hero: headline and problem, then the photo, then the introduction and buttons */
+@media(max-width:800px){
+  .hero{padding:0!important}
+  .hero-copy{display:contents}
+  .hero-copy>*{margin-left:clamp(20px,5vw,42px)!important;margin-right:clamp(20px,5vw,42px)!important}
+  .ingredient-label{order:1;margin-top:3rem!important}
+  .hero h1{order:2}
+  .hero-problem{order:3;margin-bottom:2.2rem!important}
+  .hero-image{order:4;width:100%;height:clamp(380px,112vw,560px);min-height:0!important;margin:0}
+  .hero-image img{height:100%}
+  .hero-intro{order:5;border-top:0;padding-top:0;margin-top:2.2rem!important}
+  .hero-proof{order:6}
+  .hero-actions{order:7;margin-bottom:3rem!important}
+}
+
+/* Mobile case studies: swipeable carousel */
+@media(max-width:800px){
+  .case-files{
+    display:grid!important;grid-auto-flow:column!important;grid-template-columns:none!important;
+    grid-auto-columns:min(82vw,340px)!important;gap:.8rem!important;
+    overflow-x:auto!important;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    width:auto!important;margin-right:calc(clamp(20px,5vw,42px) * -1);
+    padding:1.6rem clamp(20px,5vw,42px) 1rem 0!important;scroll-padding-left:0
+  }
+  .case-files::-webkit-scrollbar{display:none}
+  .case-file{scroll-snap-align:start;min-height:0!important}
+  .case-scroll-hint{display:block!important;text-align:left;margin:0 0 2rem;padding-right:0}
+}
+@media(max-width:800px){.hero{min-height:0!important}}
